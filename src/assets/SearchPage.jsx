@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Singleslide from "./Singleslide";
-import "./SearchPage.css";
+import "../assets/SearchPage.css";
 import Loading from "./Loading";
-
 
 export default function SearchPage() {
   const [searchText, setSearchText] = useState("");
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false); // Add loading state
-  const apiUrl = "https://academics.newtonschool.co/api/v1/ott/show?page=1&limit=1000";
+  const apiUrl =
+    "https://academics.newtonschool.co/api/v1/ott/show?page=1&limit=1000";
   const headers = {
     projectId: "62b02tyexb5i",
   };
@@ -37,20 +37,23 @@ export default function SearchPage() {
 
   return (
     <>
-      <div className="SearchPage">
+      <div className='SearchPage'>
         <input
-          type="text"
-          placeholder="Search for movies, shows, sports etc."
+          type='text'
+          placeholder='Search for movies, shows, sports etc.'
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
-        <section className="Searchdatasection">
+        <section className='Searchdatasection'>
           {loading ? (
             // Display a loader when loading is true
-            <Loading/>
+            <Loading />
           ) : filteredData.length === 0 ? (
-            <div className="notfound">
-              <img src="https://origin-staticv2.sonyliv.com/UI_icons/paymentscreenicons/no_result.png" alt="Not Found" />
+            <div className='notfound'>
+              <img
+                src='https://origin-staticv2.sonyliv.com/UI_icons/paymentscreenicons/no_result.png'
+                alt='Not Found'
+              />
               <p>Sorry! Couldn't find any results matching '{searchText}'</p>
             </div>
           ) : (
