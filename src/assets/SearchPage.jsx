@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Singleslide from "./Singleslide";
-import "../assets/SearchPage.css";
+import "../../src/assets/Searchpage.css";
 import Loading from "./Loading";
 
 export default function SearchPage() {
